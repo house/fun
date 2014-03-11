@@ -1,19 +1,50 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <meta name="viewport" content="width=device-width">
-      <style type="text/css">
-      	  #pennywhistle { font-size: 1.5em; }
-	      @media only screen and (max-device-width: 480px) {
-	      	#pennywhistle { font-size: 1em; }
-	      }
-      </style>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	  <meta name="viewport" content="width=device-width">
+	  <style type="text/css">
+	  	  #pennywhistle { font-size: 1.5em; }
+	    @media only screen and (max-device-width: 480px) {
+	    	#pennywhistle { font-size: 1em; }
+	    }
+	  </style>
+	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing.min.js"></script>
 	</head>
 	<body style="margin:0;">
-		<div>
-			ABANDON ALL HOPE, YE WHO ENTER HERE AND CANNOT HANDLE MESSY CODE
+		<div id="processing" style="text-align: center;">
+	    <script type="text/processing">
+	      //  Processing.js example sketch
+	      int fontsize = 18;
+
+	      void setup() {
+	        size(600, 520);
+	        textFont(createFont("AndaleMono",fontsize));
+	      }
+
+	      void draw() {
+		      stroke(#FF0099);
+	        noFill();
+	        background(#ffffff);
+	        line(15, 25, 70, 90);
+	        line(38, 92, 5, 90);
+	        line(0, mouseY, 190, 295);
+	        rect(400, 330, 120, 600);
+					line(mouseX, 20, 0, 80);
+					stroke(#66FFCC);
+	        ellipse(mouseX, mouseY, 100,100);
+	        ellipse(300,mouseY,20,20);
+	        fill(#FFCC00);
+	        String textstring = "holy jiggleboned ham shanks";
+	        float twidth = textWidth(textstring);
+	        text(textstring, (width-twidth)/2, height/2);
+	      }
+
+	    </script>
+	    <canvas style="outline: none;"></canvas>
 		</div>
 		<div id="pennywhistle" style="background-color: #6600CC; font-family: inconsolata, 'courier'; color: #fff; margin: 0;">
 			<ul style="list-style-type:none; margin: 0; padding:0;">
@@ -25,6 +56,7 @@
 				<li style="background-color:#6633CC;">&nbsp;</li>
 				<li style="background-color:#6622CC;">&nbsp;</li>
 			</ul>
+
 			<div style="max-width: 520px; margin: 0 auto; padding: 20px 40px; opacity: 0.75;">
 				<p align="right">March 9, 2024</p>
 				<p>To my inquisitive neighbour:<p>
@@ -37,7 +69,7 @@
 					Lemongrass Pennywhistle
 					<br>39 Chersonese-Esker Dr., Apt. B
 				</p>
-				<p style="font-size: 0.75em;padding-top: 60px;">
+				<p style="font-size: 0.75em;padding: 60px 0 120px 0;">
 					FOR OFFICE USE ONLY
 					<br>
 					<br>insi#e the falling apart, po
