@@ -15,9 +15,26 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing.min.js"></script>
 	</head>
 	<body style="margin:0;">
+		<div id="rust">
+			<ul id="scene" 
+				limit-y="0px" style="padding:0;margin:0;list-style-type:none;max-width:100%;height:1200px;overflow:hidden;">
+				<li class="layer" style="margin-top: 0;" data-depth="0.0"><img src="bg.png"></li>
+				<li class="layer" style="margin-top: 450px;" data-depth="0.05"><img src="items.png"></li>
+				<li class="layer" style="margin-top: 400px;"data-depth="0.05"><img src="floor.png"</li>
+			</ul>
+
+			<!-- Scripts -->
+			<script src="scripts/jquery.js"></script>
+			<script src="deploy/jquery.parallax.js"></script>
+			<script>
+
+			// Yep, that's it!
+			$('#scene').parallax();
+
+			</script>	
+		</div>
 		<div id="processing" style="text-align: center;">
 	    <script type="text/processing">
-	      //  Processing.js example sketch
 	      int fontsize = 18;
 
 	      void setup() {
@@ -27,6 +44,7 @@
 
 	      void draw() {
 		      stroke(#FF0099);
+					strokeWeight(1);
 	        noFill();
 	        background(#ffffff);
 	        line(15, 25, 70, 90);
@@ -34,10 +52,11 @@
 	        line(0, mouseY, 190, 295);
 	        rect(400, 330, 120, 600);
 					line(mouseX, 20, 0, 80);
-					stroke(#66FFCC);
+					strokeWeight(2);
+					stroke(#33FFFF);
 	        ellipse(mouseX, mouseY, 100,100);
 	        ellipse(300,mouseY,20,20);
-	        fill(#FFCC00);
+	        fill(#00FFCC);
 	        String textstring = "holy jiggleboned ham shanks";
 	        float twidth = textWidth(textstring);
 	        text(textstring, (width-twidth)/2, height/2);
