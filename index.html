@@ -7,6 +7,7 @@
 	  <meta name="viewport" content="width=device-width">
 	  <style type="text/css">
 	  	  #pennywhistle { font-size: 1.5em; }
+	  	  #rust img { position:absolute; }
 	    @media only screen and (max-device-width: 480px) {
 	    	#pennywhistle { font-size: 1em; }
 	    }
@@ -15,23 +16,11 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing.min.js"></script>
 	</head>
 	<body style="margin:0;">
-		<div id="rust">
-			<ul id="scene" 
-				limit-y="0px" style="padding:0;margin:0;list-style-type:none;max-width:100%;height:1200px;overflow:hidden;">
-				<li class="layer" style="margin-top: 0;" data-depth="0.0"><img src="bg.png"></li>
-				<li class="layer" style="margin-top: 450px;" data-depth="0.05"><img src="items.png"></li>
-				<li class="layer" style="margin-top: 400px;"data-depth="0.05"><img src="floor.png"</li>
+		<div id="rust" style="position:relative;padding:0;margin:0;max-width:100%;height:1200px;overflow:hidden;">
+				<img style="top: 0;" src="bg.png">
+				<img style="top: 450px;" src="items.png">
+				<img style="top: 400px; left: -200px;" src="floor.png">
 			</ul>
-
-			<!-- Scripts -->
-			<script src="scripts/jquery.js"></script>
-			<script src="deploy/jquery.parallax.js"></script>
-			<script>
-
-			// Yep, that's it!
-			$('#scene').parallax();
-
-			</script>	
 		</div>
 		<div id="processing" style="text-align: center;">
 	    <script type="text/processing">
