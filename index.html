@@ -6,16 +6,18 @@
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	  <meta name="viewport" content="width=device-width">
 	  <style type="text/css">
-	  	  #pennywhistle { font-size: 1.5em; }
-	  	  #rust img { position:absolute; }
-	    @media only screen and (max-device-width: 480px) {
-	    	#pennywhistle { font-size: 1em; }
-	    }
+	  		#pennywhistle { font-size: 1.5em; }
+	  		#rust img { position: absolute; }
+		    @media only screen and (max-device-width: 480px) {
+		    	#pennywhistle { font-size: 1em; }
+		    	#processing { display: none; }
+		    }
 	  </style>
 	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing.min.js"></script>
 	</head>
 	<body style="margin:0;">
+		<div style="background: #f9f8f4 url('gem-1.png') repeat-x;height:400px;"></div>
 		<div style="background: #f3eed3 url('gem.png') repeat-x;height:400px;"></div>
 		<div style="background: #d4e8c5 url('wire.jpg') repeat-x; height:400px;"></div>
 		<div id="rust" style="position:relative;padding:0;margin:0;max-width:100%;height:1200px;overflow:hidden;">
