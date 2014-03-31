@@ -7,7 +7,6 @@
 	  <meta name="viewport" content="width=device-width">
 	  <style type="text/css">
 	  		#pennywhistle { font-size: 1.5em; }
-	  		#rust img { position: absolute; }
 		    @media only screen and (max-device-width: 480px) {
 		    	#pennywhistle { font-size: 1em; }
 		    	#processing { display: none; }
@@ -18,47 +17,10 @@
 	</head>
 	<body style="margin:0;">
 		<div style="background: #f9f8f4 url('stroke.gif') bottom right;background-size:cover;height:400px;"></div>
-		<div style="background: #f9f8f4 url('gem-1.png') repeat-x;height:400px;"></div>
-		<div style="background: #f3eed3 url('gem.png') repeat-x;height:400px;"></div>
-		<div style="background: #d4e8c5 url('wire.jpg') repeat-x; height:400px;"></div>
-		<div id="rust" style="position:relative;padding:0;margin:0;max-width:100%;height:1200px;overflow:hidden;">
-				<img style="top: 0;" src="bg.png">
-				<img style="top: 450px;" src="items.png">
-				<img style="top: 400px; left: -200px;" src="floor.png">
-			</ul>
-		</div>
-		<div id="processing" style="text-align: center;">
-	    <script type="text/processing">
-	      int fontsize = 18;
-
-	      void setup() {
-	        size(600, 520);
-	        textFont(createFont("AndaleMono",fontsize));
-	      }
-
-	      void draw() {
-		      stroke(#FF0099);
-					strokeWeight(1);
-	        noFill();
-	        background(#ffffff);
-	        line(15, 25, 70, 90);
-	        line(38, 92, 5, 90);
-	        line(0, mouseY, 190, 295);
-	        rect(400, 330, 120, 600);
-					line(mouseX, 20, 0, 80);
-					strokeWeight(2);
-					stroke(#33FFFF);
-	        ellipse(mouseX, mouseY, 100,100);
-	        ellipse(300,mouseY,20,20);
-	        fill(#00FFCC);
-	        String textstring = "holy jiggleboned ham shanks";
-	        float twidth = textWidth(textstring);
-	        text(textstring, (width-twidth)/2, height/2);
-	      }
-
-	    </script>
-	    <canvas style="outline: none;"></canvas>
-		</div>
+		<div style="background: #f9f8f4 url('gem-1.png') center repeat-x;height:400px;"></div>
+		<div style="background: #f3eed3 url('gem.png') center repeat-x;height:400px;"></div>
+		<div style="background: #d4e8c5 url('wire.jpg') center repeat-x; height:400px;"></div>
+		<div style="background: #202020 url('items.png') center 340px repeat-x; border-bottom: 80px solid #111;height:600px;"></div>
 		<div id="pennywhistle" style="background-color: #6600CC; font-family: inconsolata, 'courier'; color: #fff; margin: 0;">
 			<ul style="list-style-type:none; margin: 0; padding:0;">
 				<li style="background-color:#6688CC;">&nbsp;</li>
@@ -105,6 +67,38 @@
 					-->
 				</p>
 			</div>
+		</div>
+		<div id="processing" style="text-align: center;">
+		    <script type="text/processing">
+		      int fontsize = 18;
+
+		      void setup() {
+		        size(600, 520);
+		        textFont(createFont("AndaleMono",fontsize));
+		      }
+
+		      void draw() {
+			      stroke(#FF0099);
+						strokeWeight(1);
+		        noFill();
+		        background(#ffffff);
+		        line(15, 25, 70, 90);
+		        line(38, 92, 5, 90);
+		        line(0, mouseY, 190, 295);
+		        rect(400, 330, 120, 600);
+						line(mouseX, 20, 0, 80);
+						strokeWeight(2);
+						stroke(#33FFFF);
+		        ellipse(mouseX, mouseY, 100,100);
+		        ellipse(300,mouseY,20,20);
+		        fill(#00FFCC);
+		        String textstring = "holy jiggleboned ham shanks";
+		        float twidth = textWidth(textstring);
+		        text(textstring, (width-twidth)/2, height/2);
+		      }
+
+		    </script>
+		    <canvas style="outline: none;"></canvas>
 		</div>
 	</body>
 </html>
