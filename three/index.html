@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js"></script> 
+    <title>three.js test</title>
+    <style>
+      canvas {
+        width: 100%;
+        height: 100%; 
+      }
+      body { 
+        margin: 0;
+        background: #00ffde; /* Old browsers */
+        background: -moz-linear-gradient(top, #00ffde 0%, #07ff8b 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00ffde), color-stop(100%,#07ff8b)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #00ffde 0%,#07ff8b 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #00ffde 0%,#07ff8b 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #00ffde 0%,#07ff8b 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #00ffde 0%,#07ff8b 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffde', endColorstr='#07ff8b',GradientType=0 ); /* IE6-9 */
+      }
+    </style>
+  </head>
+  <body style="margin:0;">
+    <script>
+    // create scene
+    var scene = new THREE.Scene();
+
+    // create camera
+    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+    scene.add(camera);
+
+    camera.position.z = 30;
+//    camera.position.x = 10;
+
+    // create renderer
+    var renderer = new THREE.WebGLRenderer( { alpha: true } );
+    //start renderer
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+
+
+    // create cube
+
+    var geometry = new THREE.Geometry();
+
+    geometry.vertices.push(
+      new THREE.Vector3( -10,  5, 10 ),
+      new THREE.Vector3( -5, -15, 0 ),
+      new THREE.Vector3(  10, -5, 5 ),
+      new THREE.Vector3(  5, -5, 20 )
+    );
+
+    geometry.faces.push( new THREE.Face3( 0, 1, 2 ) );
+
+    geometry.computeBoundingSphere();
+
+
+    var matWhite = new THREE.MeshBasicMaterial( { wireframe: true, color: 0x9cedb4 } );
+    var cubeWhite = new THREE.Mesh( geometry, matWhite );
+
+    var matCyan = new THREE.MeshBasicMaterial( { wireframe: true, color: 0x302d4e } );
+    var cubeCyan = new THREE.Mesh( geometry, matCyan );
+
+    var matPurple = new THREE.MeshBasicMaterial( { wireframe: true, color: 0x2f5c6f } );
+    var cubePurple = new THREE.Mesh( geometry, matPurple );
+
+    var matMagenta = new THREE.MeshBasicMaterial( { wireframe: true, color: 0x7d2162 } );
+    var cubeMagenta = new THREE.Mesh( geometry, matMagenta );
+
+    scene.add( cubeWhite );
+    scene.add( cubeCyan );
+    scene.add( cubePurple );
+    scene.add( cubeMagenta );
+
+
+    var render = function() {
+      requestAnimationFrame(render);
+
+      cubeWhite.position.x = 0;
+      cubeCyan.position.x = 0.002;
+      cubeMagenta.position.x = -0.002;
+      cubeWhite.position.y = 0;
+      cubeCyan.position.y = 0.01;
+      cubeMagenta.position.y = -0.01;
+      cubeWhite.rotation.y += 0.01;
+      cubeWhite.rotation.x += 0.01;
+      cubeCyan.rotation.y += 0.01;
+      cubeMagenta.rotation.y += 0.01;
+      cubeMagenta.rotation.z += 0.01;
+      cubePurple.rotation.x += 0.01;
+      cubePurple.rotation.z += 0.01;
+      
+      renderer.setClearColor( 0x1f1528, 1 );
+      renderer.render(scene, camera);
+    }
+
+    render();
+    </script>
+  </body>
+</html>
