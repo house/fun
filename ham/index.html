@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	  <meta name="viewport" content="width=device-width">
+	  <script src="http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing.min.js"></script>
+	</head>
+	<body style="margin:0;">
+		<div id="processing" style="text-align: center;">
+		    <script type="text/processing">
+		      int fontsize = 18;
+
+		      void setup() {
+		        size(600, 520);
+		        textFont(createFont("AndaleMono",fontsize));
+		      }
+
+		      void draw() {
+			      stroke(#FF0099);
+						strokeWeight(1);
+		        noFill();
+		        background(#ffffff);
+		        line(15, 25, 70, 90);
+		        line(38, 92, 5, 90);
+		        line(0, mouseY, 190, 295);
+		        rect(400, 330, 120, 600);
+						line(mouseX, 20, 0, 80);
+						strokeWeight(2);
+						stroke(#33FFFF);
+		        ellipse(mouseX, mouseY, 100,100);
+		        ellipse(300,mouseY,20,20);
+		        fill(#00FFCC);
+		        String textstring = "holy jiggleboned ham shanks";
+		        float twidth = textWidth(textstring);
+		        text(textstring, (width-twidth)/2, height/2);
+		      }
+
+		    </script>
+		    <canvas style="outline: none;"></canvas>
+		</div>
+	</body>
+</html>
